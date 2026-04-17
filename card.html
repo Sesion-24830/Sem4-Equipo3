@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-background": "#1e1c10",
+          "on-primary": "#ffffff",
+          "primary-container": "#c14b38",
+          "secondary": "#904d00",
+          "primary-fixed-dim": "#ffb4a7",
+          "outline": "#8b716a",
+          "on-primary-fixed-variant": "#872113",
+          "on-primary-container": "#fff6f4",
+          "surface-tint": "#a73828",
+          "primary-fixed": "#ffdad4",
+          "outline-variant": "#dfc0b7",
+          "on-secondary-fixed": "#2f1500",
+          "tertiary-fixed": "#fedcbe",
+          "inverse-surface": "#333024",
+          "error-container": "#ffdad6",
+          "secondary-container": "#fe932c",
+          "surface-container-highest": "#e9e2d0",
+          "on-surface-variant": "#58423b",
+          "on-error": "#ffffff",
+          "on-tertiary-fixed-variant": "#59422c",
+          "on-tertiary-fixed": "#291806",
+          "on-surface": "#1e1c10",
+          "error": "#ba1a1a",
+          "inverse-on-surface": "#f7f0dd",
+          "background": "#fff9ec",
+          "tertiary-container": "#876d54",
+          "on-secondary-fixed-variant": "#6e3900",
+          "surface-variant": "#e9e2d0",
+          "secondary-fixed-dim": "#ffb77d",
+          "surface": "#fff9ec",
+          "on-error-container": "#93000a",
+          "on-secondary": "#ffffff",
+          "primary": "#a03323",
+          "on-tertiary": "#ffffff",
+          "tertiary": "#6d553e",
+          "on-tertiary-container": "#fff6f1",
+          "tertiary-fixed-dim": "#e1c1a4",
+          "surface-container": "#f4eedb",
+          "surface-container-high": "#efe8d5",
+          "surface-bright": "#fff9ec",
+          "surface-container-low": "#faf3e0",
+          "surface-dim": "#e0dac7",
+          "secondary-fixed": "#ffdcc3",
+          "inverse-primary": "#ffb4a7",
+          "on-primary-fixed": "#400200",
+          "surface-container-lowest": "#ffffff",
+          "on-secondary-container": "#663500"
+        },
+        borderRadius: {
+          DEFAULT: "0.125rem",
+          lg: "0.25rem",
+          xl: "0.5rem",
+          full: "0.75rem"
+        },
+        fontFamily: {
+          headline: ["Noto Serif"],
+          body: ["Manrope"],
+          label: ["Manrope"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Manrope', sans-serif; background-color: #fff9ec; color: #1e1c10; }
+  .font-serif { font-family: 'Noto Serif', serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+  .hero-gradient { background: linear-gradient(135deg, rgba(160,51,35,0.92) 0%, rgba(193,75,56,0.45) 100%); }
+  .signature-gradient { background: linear-gradient(135deg, #a03323 0%, #c14b38 100%); }
+  body { min-height: max(884px, 100dvh); }
+
+  /* Category scroll */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Smooth scroll */
+  html { scroll-behavior: smooth; }
+
+  /* Fade-in animation */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.7s ease both; }
+  .fade-up-delay-1 { animation-delay: 0.1s; }
+  .fade-up-delay-2 { animation-delay: 0.22s; }
+  .fade-up-delay-3 { animation-delay: 0.34s; }
+  .fade-up-delay-4 { animation-delay: 0.46s; }
+
+  /* Menu item hover */
+  .menu-item { transition: background 0.3s, box-shadow 0.3s; }
+  .menu-item:hover { background: #faf3e0; box-shadow: 0 4px 24px rgba(160,51,35,0.07); }
+
+  /* Bento grid hover */
+  .bento-card img { transition: transform 0.7s cubic-bezier(0.4,0,0.2,1); }
+  .bento-card:hover img { transform: scale(1.06); }
+</style>
+</head>
+<body class="bg-background text-on-surface">
+
+<!-- ═══════════════ TOP APP BAR ═══════════════ -->
+<header class="bg-[#fff9ec]/85 backdrop-blur-md fixed top-0 w-full z-50 shadow-[0_8px_40px_rgba(160,51,35,0.06)]">
+  <div class="flex justify-between items-center px-8 py-5 max-w-screen-xl mx-auto">
+    <div class="flex items-center gap-3">
+      <button class="text-primary md:hidden hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+      <h1 class="text-2xl font-serif text-primary italic tracking-tight">La Brasa Criolla</h1>
+    </div>
+    <nav class="hidden md:flex gap-10">
+      <a class="text-primary border-b-2 border-primary font-medium transition-opacity hover:opacity-70" href="#">Inicio</a>
+      <a class="text-on-background font-medium transition-opacity hover:opacity-70" href="#legado">Nuestro Legado</a>
+      <a class="text-on-background font-medium transition-opacity hover:opacity-70" href="#menu">Carta</a>
+      <a class="text-on-background font-medium transition-opacity hover:opacity-70" href="#visita">Reservas</a>
+    </nav>
+    <button class="signature-gradient text-on-primary px-6 py-2 rounded-lg font-bold shadow-sm hover:opacity-90 transition-all uppercase tracking-widest text-xs">
+      Reservar
+    </button>
+  </div>
+</header>
+
+<main class="pt-24">
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="relative min-h-[780px] flex items-center px-8 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhsk7ZNTdFEtkeGtZa61HuXvXRxVgEC7QXi7VU8xqieii7X045cXO0VppJxhPMY8K01A5Y16z5NNCzIAyPmF28hVS-SL0qO2jrTb6zT4shV8FrktVnOxWZBfAoEeDjkUo7ekEbVieHrwPSgd0M3SWQv7GGayqE6BHRZrQ9LoV0mfM7aSvLk9mxInYKwTPONJMU9-7QN4IIkoytiuTcSKUeHf4wufEHbdQnVLEW3NXAD3h_ZsSP5EVNywV86aMeSF9nzY8zVN50pctI" alt="Carbón encendido y olla de cobre"/>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#fff9ec] via-[#fff9ec]/50 to-transparent"></div>
+    </div>
+    <div class="relative z-10 max-w-2xl fade-up">
+      <span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Recomendación del Chef</span>
+      <h2 class="text-6xl md:text-8xl font-serif text-on-background italic leading-tight mb-6">
+        El Legado del <span class="text-primary">Sabor Criollo</span>
+      </h2>
+      <p class="text-xl md:text-2xl font-body text-on-surface-variant mb-10 leading-relaxed max-w-lg">
+        Nuestras carnes son selladas al carbón siguiendo la tradición de la familia, generación tras generación.
+      </p>
+      <div class="flex gap-6 flex-wrap">
+        <button class="signature-gradient text-on-primary px-10 py-5 rounded-lg text-lg font-bold hover:opacity-90 transition-all shadow-lg">
+          Reservar Mesa
+        </button>
+        <a href="#menu" class="flex items-center gap-2 text-primary font-bold border-b-2 border-primary py-4 hover:gap-4 transition-all">
+          Ver Carta <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ LEGADO ═══════════════ -->
+  <section id="legado" class="py-32 px-8 max-w-screen-xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+      <div class="relative">
+        <div class="aspect-[4/5] bg-surface-container-highest rounded-lg overflow-hidden">
+          <img class="w-full h-full object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDej3nAf8LQI3cjuTulmcxDLqFiaRdyVKYDesJaNaBHCNpkQ4L_w0daPFUO47Mx7Z7aZ2spSPyOmRY4Z-AhitYt5bZnOFlirMKJZ2Zhzl_KMyzEjV--930l9fDbYYmTqf74bZvfJFXAlvBCNpf8wpM1jkcesayOTpTUw9ciX1EQ-0kytNZPoS75PHlu-anqlNthzKswGKEQVApUy16S4yNBMPrcRBkFpRUPDroYQK9BIWfj4jywwsKCproNd1QmRpO4e2_C9mPUv1Tb"
+            alt="Cocinera tradicional"/>
+        </div>
+        <div class="absolute -bottom-10 -right-10 bg-primary-container p-8 text-on-primary-container max-w-xs rounded-lg shadow-2xl hidden md:block">
+          <p class="font-serif italic text-lg leading-snug">
+            "El secreto no está en los ingredientes, sino en el fuego que les damos con amor."
+          </p>
+          <span class="block mt-4 font-bold tracking-widest uppercase text-xs">— La Familia</span>
+        </div>
+      </div>
+      <div class="space-y-8">
+        <h3 class="uppercase tracking-[0.4em] text-on-surface-variant font-bold text-xs">Nuestro Legado</h3>
+        <h2 class="text-5xl font-serif text-on-background italic leading-tight">El Alma de la Cocina Criolla</h2>
+        <div class="space-y-6 text-lg text-on-surface-variant leading-loose">
+          <p>
+            La Brasa Criolla nació de una fogata familiar y del deseo de compartir los sabores auténticos del Perú. Cada receta lleva décadas de práctica, respeto por la tierra y el orgullo de una tradición que no se improvisa.
+          </p>
+          <p>
+            Usamos carbón de madera dura, ollas de barro y especias seleccionadas a mano. El resultado no es solo un plato: es una memoria que se queda.
+          </p>
+        </div>
+        <div class="pt-6">
+          <div class="inline-flex items-center gap-4 py-4 px-6 bg-surface-container-low rounded-full">
+            <span class="signature-gradient text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Tradición</span>
+            <span class="text-on-surface font-bold text-sm tracking-wide">Recetas Criollas Auténticas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ GALERÍA BENTO ═══════════════ -->
+  <section class="bg-surface-container-low py-32 px-8">
+    <div class="max-w-screen-xl mx-auto">
+      <div class="text-center mb-20 space-y-4">
+        <h2 class="text-5xl font-serif italic text-on-background">Despertar los Sentidos</h2>
+        <p class="text-on-surface-variant max-w-xl mx-auto">Texturas, aromas y colores que cuentan la historia de nuestra cocina y nuestra gente.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-12 md:grid-rows-2 gap-6 h-auto md:h-[800px]">
+        <!-- Bento 1 -->
+        <div class="bento-card md:col-span-8 md:row-span-1 rounded-lg overflow-hidden group relative">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGl8zo2FFGo9zMOpeDeBag-F0PqwLo1Z0g5jb0w-C1qtf9YAy8bkiMKd6kgq1k0PN6JZiGEWXGyjUyljlc5KcDOUus9XJEH70SwmGHEqFgWGgZoqr61BvE_D9Ii_aWBCRQDPF1CIf5F2xczWKIAnqxv7toQcv0oENOxfeVmv7gJXKal5860xf1-gNCf88iClHyjP2aP9H78L8cZ5Y9Gwz46vyZyKmlQgBG6RkgbVj1UeIqg3Yx7RoyA14WtKqvDLZF8GJksqbW7fM" alt="Lomo Saltado Premium"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+            <span class="text-white font-serif italic text-2xl">Plato del Chef</span>
+          </div>
+        </div>
+        <!-- Bento 2 -->
+        <div class="bento-card md:col-span-4 md:row-span-2 rounded-lg overflow-hidden group relative">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJLj1-NQRM8ib_5RYwAMBPMOu5o-IKDlLdbKjQw7_oodkN-tNT8HExgoDXy0qIoBpRP_2mqxxA-mxdfNoKZ8HTp6A3O7STPKBQ0upmBptYEvaWp-buNv1AH2qpQzddo-6BtVHtsz8a6wQ_4qNLXvX9OIZKNGL1f6DKmsq1T6OQ_IzicBN3sf-2jnTx-xj1e6Psnog8w33A_HCCezpwBmii6KamBGjNnhtLXgmV-c9Qu4QxxmApqeXqyhwXwTj_1_k5s6Icvldva_8" alt="Seco con Frijoles"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+            <span class="text-white font-serif italic text-2xl">Guisos de Tradición</span>
+          </div>
+        </div>
+        <!-- Bento 3 -->
+        <div class="bento-card md:col-span-4 md:row-span-1 rounded-lg overflow-hidden group relative">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBniW8A3ypZnciOqnS6dYHCWVlPdX2OmIK3-lXErTWpB2l24Mbs7ayhjuGjUqnRlNZz_qvqeIg2Uzg-J2JtojRTxGeTy_QYN2tXxYnayOWsrpc5IRRMHqkDKNoL8GBIHIcEFPH8-5XV_mJJcfKb-byTYCnG3lAdNnVd8pQ9YhHqI8S_OIF4lQqeCnDGJxfIazRzwtLq0baKnebk1R8jt96yXCiIQTTonn9Patzs2041fr7WmIkD0WWIn94ZM1Dpw6xQu7MUCLMoRac" alt="Aji de Gallina"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+            <span class="text-white font-serif italic text-2xl">Sabores del Ají</span>
+          </div>
+        </div>
+        <!-- Bento 4 -->
+        <div class="bento-card md:col-span-4 md:row-span-1 rounded-lg overflow-hidden group relative">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpKsBCvZy5wGZ3sEjlPYIgldr41Q2ejTJPW5NTzlJSB-RvQBszVdO8qLsx2GhgjZh8MiE5Zg6LXzRDGdj0iZqKXyWgNXOLOmTzZMDtEe4hY5_yp5IPC4QEQEvqDegG2lfsE8IqOjZvtlXBfZIZ3wCyQg_ndqcD6Lz-1V_tCoGRcQ86CtcbgJiqm8UJqCPovjQEDG3IHLAt7WhNipt3gpAdhtMg2_nM0xbE652m5UThTALHbkRNzVF-19SSPcCBdj-RsQ5culLHEeY" alt="Arroz con Pollo"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+            <span class="text-white font-serif italic text-2xl">Arroz Criollo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CARTA ═══════════════ -->
+  <section id="menu" class="py-32 px-8 max-w-screen-xl mx-auto">
+    <!-- Category Scroll -->
+    <div class="overflow-x-auto flex gap-3 no-scrollbar py-2 mb-16">
+      <button class="flex-none px-6 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-semibold text-sm whitespace-nowrap hover:bg-secondary hover:text-on-secondary transition-colors">Entradas</button>
+      <button class="flex-none px-6 py-2 rounded-full signature-gradient text-on-primary font-semibold text-sm whitespace-nowrap shadow-md">Platos de Fondo</button>
+      <button class="flex-none px-6 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-semibold text-sm whitespace-nowrap hover:bg-secondary hover:text-on-secondary transition-colors">Especialidades</button>
+      <button class="flex-none px-6 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-semibold text-sm whitespace-nowrap hover:bg-secondary hover:text-on-secondary transition-colors">Postres</button>
+      <button class="flex-none px-6 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-semibold text-sm whitespace-nowrap hover:bg-secondary hover:text-on-secondary transition-colors">Bebidas</button>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+      <div>
+        <h3 class="uppercase tracking-[0.4em] text-on-surface-variant font-bold text-xs mb-4">La Carta</h3>
+        <h2 class="text-5xl font-serif text-on-background italic">Platos de Fondo</h2>
+      </div>
+      <p class="text-on-surface-variant max-w-sm">Preparados con carbón de madera y especias criollas seleccionadas a mano.</p>
+    </div>
+
+    <div class="space-y-6">
+
+      <!-- Item 1 -->
+      <div class="menu-item flex items-center gap-6 p-6 rounded-xl group cursor-pointer">
+        <div class="relative flex-none w-28 h-28 sm:w-36 sm:h-36 rounded-lg overflow-hidden shadow-md">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBogZLYT_uIzfTfctTMVmqvCtFeXWAsEO84fub4KygRp2T4vAuefR1YMpCb3ZBunl_6hL-ANnNbtU_6LKaOhJ1_UnpC0Kf8Fw5zs9vxnM0R6vz9o4t4EvLSq-M9L4KPn8dkFuqvdfaOmx8yNvI8eGiKzUQazZpZq_sDLXLlxsB-Ccrh_hHs48ZkfUYf8trJ9jbWYZJJ1-BOqRR8wRZT2uNLDA4EzjbXndjkEaOvv-volEevg6883JpHBduoza53Dzbslf3UXuBOcmQ" alt="Lomo Saltado"/>
+        </div>
+        <div class="flex-grow">
+          <div class="flex justify-between items-start mb-1">
+            <h4 class="font-bold text-xl text-on-background font-serif italic">Lomo Saltado</h4>
+            <span class="font-bold text-primary text-xl">S/ 38</span>
+          </div>
+          <p class="text-on-surface-variant text-sm leading-relaxed mb-4 max-w-lg">Finas tiras de lomo fino, cebolla roja, tomate, ají amarillo y especias criollas, servido con papas fritas y arroz blanco.</p>
+          <button class="signature-gradient text-on-primary w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 active:scale-95 transition-transform shadow-lg">
+            <span class="material-symbols-outlined">add</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="h-px bg-outline-variant/30 mx-6"></div>
+
+      <!-- Item 2 -->
+      <div class="menu-item flex items-center gap-6 p-6 rounded-xl group cursor-pointer">
+        <div class="relative flex-none w-28 h-28 sm:w-36 sm:h-36 rounded-lg overflow-hidden shadow-md">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBniW8A3ypZnciOqnS6dYHCWVlPdX2OmIK3-lXErTWpB2l24Mbs7ayhjuGjUqnRlNZz_qvqeIg2Uzg-J2JtojRTxGeTy_QYN2tXxYnayOWsrpc5IRRMHqkDKNoL8GBIHIcEFPH8-5XV_mJJcfKb-byTYCnG3lAdNnVd8pQ9YhHqI8S_OIF4lQqeCnDGJxfIazRzwtLq0baKnebk1R8jt96yXCiIQTTonn9Patzs2041fr7WmIkD0WWIn94ZM1Dpw6xQu7MUCLMoRac" alt="Ají de Gallina"/>
+        </div>
+        <div class="flex-grow">
+          <div class="flex justify-between items-start mb-1">
+            <h4 class="font-bold text-xl text-on-background font-serif italic">Ají de Gallina</h4>
+            <span class="font-bold text-primary text-xl">S/ 32</span>
+          </div>
+          <p class="text-on-surface-variant text-sm leading-relaxed mb-4 max-w-lg">Crema espesa de ají amarillo y nueces con pechuga deshilachada, acompañada de huevo cocido, aceituna y arroz.</p>
+          <button class="signature-gradient text-on-primary w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 active:scale-95 transition-transform shadow-lg">
+            <span class="material-symbols-outlined">add</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="h-px bg-outline-variant/30 mx-6"></div>
+
+      <!-- Item 3 -->
+      <div class="menu-item flex items-center gap-6 p-6 rounded-xl group cursor-pointer">
+        <div class="relative flex-none w-28 h-28 sm:w-36 sm:h-36 rounded-lg overflow-hidden shadow-md">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJLj1-NQRM8ib_5RYwAMBPMOu5o-IKDlLdbKjQw7_oodkN-tNT8HExgoDXy0qIoBpRP_2mqxxA-mxdfNoKZ8HTp6A3O7STPKBQ0upmBptYEvaWp-buNv1AH2qpQzddo-6BtVHtsz8a6wQ_4qNLXvX9OIZKNGL1f6DKmsq1T6OQ_IzicBN3sf-2jnTx-xj1e6Psnog8w33A_HCCezpwBmii6KamBGjNnhtLXgmV-c9Qu4QxxmApqeXqyhwXwTj_1_k5s6Icvldva_8" alt="Seco con Frijoles"/>
+        </div>
+        <div class="flex-grow">
+          <div class="flex justify-between items-start mb-1">
+            <h4 class="font-bold text-xl text-on-background font-serif italic">Seco con Frijoles</h4>
+            <span class="font-bold text-primary text-xl">S/ 35</span>
+          </div>
+          <p class="text-on-surface-variant text-sm leading-relaxed mb-4 max-w-lg">Guiso de res en salsa de cilantro y chicha de jora, acompañado de frijoles canarios y arroz graneado.</p>
+          <button class="signature-gradient text-on-primary w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 active:scale-95 transition-transform shadow-lg">
+            <span class="material-symbols-outlined">add</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="h-px bg-outline-variant/30 mx-6"></div>
+
+      <!-- Item 4 -->
+      <div class="menu-item flex items-center gap-6 p-6 rounded-xl group cursor-pointer">
+        <div class="relative flex-none w-28 h-28 sm:w-36 sm:h-36 rounded-lg overflow-hidden shadow-md">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpKsBCvZy5wGZ3sEjlPYIgldr41Q2ejTJPW5NTzlJSB-RvQBszVdO8qLsx2GhgjZh8MiE5Zg6LXzRDGdj0iZqKXyWgNXOLOmTzZMDtEe4hY5_yp5IPC4QEQEvqDegG2lfsE8IqOjZvtlXBfZIZ3wCyQg_ndqcD6Lz-1V_tCoGRcQ86CtcbgJiqm8UJqCPovjQEDG3IHLAt7WhNipt3gpAdhtMg2_nM0xbE652m5UThTALHbkRNzVF-19SSPcCBdj-RsQ5culLHEeY" alt="Arroz con Pollo"/>
+        </div>
+        <div class="flex-grow">
+          <div class="flex justify-between items-start mb-1">
+            <h4 class="font-bold text-xl text-on-background font-serif italic">Arroz con Pollo</h4>
+            <span class="font-bold text-primary text-xl">S/ 30</span>
+          </div>
+          <p class="text-on-surface-variant text-sm leading-relaxed mb-4 max-w-lg">Arroz aromatizado con cilantro y especias, servido con presa de pollo dorada y salsa criolla de cebollas.</p>
+          <button class="signature-gradient text-on-primary w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 active:scale-95 transition-transform shadow-lg">
+            <span class="material-symbols-outlined">add</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ EXPERIENCIAS ═══════════════ -->
+  <section class="py-32 px-8 bg-surface-container-high">
+    <div class="max-w-screen-xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div>
+          <h3 class="uppercase tracking-[0.4em] text-on-surface-variant font-bold text-xs mb-4">Especialidades</h3>
+          <h2 class="text-5xl font-serif text-on-background italic">Experiencias Criollas</h2>
+        </div>
+        <p class="text-on-surface-variant max-w-sm">Momentos diseñados para honrar la gastronomía criolla en su máxima expresión.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="group bg-surface-container-highest p-12 rounded-lg hover:bg-primary-container transition-colors duration-500">
+          <span class="material-symbols-outlined text-primary group-hover:text-on-primary-container text-4xl mb-6">award_star</span>
+          <h4 class="text-3xl font-serif italic mb-4 group-hover:text-on-primary-container transition-colors">Menú de Degustación</h4>
+          <p class="text-on-surface-variant group-hover:text-on-primary-container/80 mb-8 leading-relaxed">
+            Un recorrido de siete tiempos por la historia de la cocina criolla peruana. Desde los fundamentos del carbón hasta la delicadeza de los postres ancestrales.
+          </p>
+          <a class="inline-flex items-center gap-2 text-primary group-hover:text-on-primary-container font-bold tracking-widest uppercase text-xs" href="#">
+            Explorar Menú <span class="material-symbols-outlined text-sm">north_east</span>
+          </a>
+        </div>
+        <div class="group bg-surface-container p-12 rounded-lg hover:bg-secondary transition-colors duration-500">
+          <span class="material-symbols-outlined text-secondary group-hover:text-on-secondary text-4xl mb-6">local_dining</span>
+          <h4 class="text-3xl font-serif italic mb-4 group-hover:text-on-secondary transition-colors">Reservas Privadas</h4>
+          <p class="text-on-surface-variant group-hover:text-on-secondary/80 mb-8 leading-relaxed">
+            Nuestro comedor privado transformado en su espacio personal. Un chef dedicado y una experiencia criolla impecable para sus celebraciones más íntimas.
+          </p>
+          <a class="inline-flex items-center gap-2 text-secondary group-hover:text-on-secondary font-bold tracking-widest uppercase text-xs" href="#">
+            Consultar Disponibilidad <span class="material-symbols-outlined text-sm">north_east</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ TESTIMONIO ═══════════════ -->
+  <section class="py-32 bg-surface text-center px-8">
+    <div class="max-w-4xl mx-auto space-y-12">
+      <span class="material-symbols-outlined text-primary-container text-6xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+      <blockquote class="text-3xl md:text-5xl font-serif italic text-on-background leading-tight">
+        "Encontrar un lugar donde el sabor criollo te abrace desde el primer bocado es un privilegio. La Brasa Criolla no es un restaurante, es un abrazo de hogar."
+      </blockquote>
+      <div class="flex flex-col items-center gap-2">
+        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe_7LKBqLkDN2Rhb65kj7vdm37Xfe2SsefsOD7Kzy8xohWsj12dNvsdrdB85U7kffKgX1xIZ_7Z_3JgZz8iDKPJ3HTY4n2BY_NprGWpFe_QNOrmghmoKjUkjAHoLT8xixFTOXX5uvQVCkVH2dWDnJwC0NwD3rjZGrEbj5_BAjUCOr3robTN3AKZ1rABQw6kLryr9iokMeFp4Yjky-ttspLY_UnIH6NaPQ3oFxXcLCf7eG6np_zsBt1i_JiSeF9oGxm0MXUrN7-2Rn7" alt="Cliente"/>
+        </div>
+        <span class="font-bold tracking-widest uppercase text-xs">Carlos Herrera</span>
+        <span class="text-on-surface-variant text-sm italic">Gastrónomo y crítico culinario</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ VISITA ═══════════════ -->
+  <section id="visita" class="py-32 px-8 bg-surface-container-highest">
+    <div class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
+      <div class="space-y-12">
+        <h2 class="text-5xl font-serif italic text-on-background">Visítenos</h2>
+        <div class="space-y-8">
+          <div class="flex items-start gap-6">
+            <span class="material-symbols-outlined text-primary p-3 bg-background rounded-lg">location_on</span>
+            <div>
+              <h5 class="font-bold text-on-background mb-1">Dirección</h5>
+              <p class="text-on-surface-variant">Av. La Mar 1234, Miraflores<br/>Lima, Perú</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-6">
+            <span class="material-symbols-outlined text-primary p-3 bg-background rounded-lg">schedule</span>
+            <div>
+              <h5 class="font-bold text-on-background mb-1">Horario de Servicio</h5>
+              <div class="grid grid-cols-2 gap-x-8 gap-y-1 text-on-surface-variant">
+                <span>Martes — Jueves</span> <span>12:00 – 22:00</span>
+                <span>Viernes — Sábado</span> <span>12:00 – 23:30</span>
+                <span>Domingo</span> <span>12:00 – 18:00</span>
+                <span class="text-primary font-bold italic">Lunes</span> <span class="italic">Cerrado</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-start gap-6">
+            <span class="material-symbols-outlined text-primary p-3 bg-background rounded-lg">call</span>
+            <div>
+              <h5 class="font-bold text-on-background mb-1">Contacto</h5>
+              <p class="text-on-surface-variant">+51 (01) 445 7890<br/>hola@labrasacriolla.pe</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg overflow-hidden shadow-2xl h-[400px] md:h-auto bg-surface-container-high flex items-center justify-center">
+        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrWSCQuCklrVEBwP9TPWI5ogcTNyjPz5pfRFS1N-jdYQP8W4yVk4pxKiIo7JgxsbHsQzCs-Twx3Ut-yRL4WnXIvKNVmpwnhXLe_vEN57PqB1L2_BYoQyJOCfo90hKahUobsUnjhzWVwNzqBDw5lbbBAIPzWZuWgcz_47LGYO9GWOmdL7SsCV1dP3JUQMU1aTQjjEJlsjdScJKKl-cMn4QIMCI32jHBemN5-B3dlAYFHGpfSywEhRJhXwiUhOyaj4vwxEIwHkanMUt3" alt="Mapa"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CTA FINAL ═══════════════ -->
+  <section class="py-40 px-8 relative overflow-hidden text-center bg-primary">
+    <div class="absolute inset-0 opacity-20">
+      <img class="w-full h-full object-cover mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK-McxQsAzzHuz5VLolNRstHPM4tY09Ibixh2CzQITDyyTSOCYiIIB7bVveO14wlFLukZ0AqhufEZUQa9kz5vZeIHiVQtiishV4IUlWqYu8j4-Dlcvs0cSAxFRJ5Zxqe6ksjkP6pcu-mvQfCfGRv2hdciZKnZK-uCcSi_FsUevYfDRs55urXihsUDTaZ3EZOXT2pYL4PIV5L5sdrt2sGMgs9dmY3l8Ua8kVrPdhVqyExGYzDzSb67jpuAsTFLw_EIhIJhe3WDoI9ww" alt="Fuego"/>
+    </div>
+    <div class="relative z-10 max-w-3xl mx-auto">
+      <h2 class="text-5xl md:text-7xl font-serif italic text-white mb-8">El sabor criollo te espera.</h2>
+      <p class="text-primary-fixed text-xl mb-12 opacity-90">Permítanos preparar una mesa para usted y los suyos.</p>
+      <button class="bg-surface-container-lowest text-primary px-12 py-6 rounded-lg text-xl font-bold hover:scale-105 transition-transform shadow-2xl uppercase tracking-[0.2em]">
+        Reservar Ahora
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="bg-[#faf3e0] w-full py-12 px-8">
+  <div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-screen-xl mx-auto">
+    <div class="text-center md:text-left">
+      <h4 class="font-serif text-xl text-primary mb-2 italic">La Brasa Criolla</h4>
+      <p class="text-sm tracking-widest uppercase text-on-background/50">
+        © 2024 La Brasa Criolla. Tradición en cada brasa.
+      </p>
+    </div>
+    <nav class="flex gap-8 flex-wrap justify-center">
+      <a class="text-sm tracking-widest uppercase text-on-background/50 hover:text-primary transition-colors" href="#">El Legado</a>
+      <a class="text-sm tracking-widest uppercase text-on-background/50 hover:text-primary transition-colors" href="#menu">Carta</a>
+      <a class="text-sm tracking-widest uppercase text-on-background/50 hover:text-primary transition-colors" href="#visita">Reservas</a>
+      <a class="text-sm tracking-widest uppercase text-on-background/50 hover:text-primary transition-colors" href="#">Contacto</a>
+    </nav>
+    <div class="flex gap-6">
+      <span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-70 transition-opacity">social_leaderboard</span>
+      <span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-70 transition-opacity">photo_camera</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
