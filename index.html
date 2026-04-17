@@ -1,12 +1,332 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Página menú</h1>
-</body>
-</html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#00746f",
+                    "secondary": "#586330",
+                    "surface-container-low": "#fbf3e4",
+                    "inverse-on-surface": "#f8f0e1",
+                    "on-tertiary-fixed": "#00201e",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#843821",
+                    "background": "#fff8ef",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#ffb59f",
+                    "on-tertiary-container": "#9ef6f0",
+                    "surface-container-high": "#efe7d9",
+                    "on-secondary-fixed-variant": "#404b1b",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#005955",
+                    "tertiary-fixed": "#9af2eb",
+                    "surface-variant": "#e9e2d3",
+                    "surface-container": "#f5edde",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#ffb59f",
+                    "surface-dim": "#e1d9cb",
+                    "on-primary-fixed-variant": "#793019",
+                    "surface-tint": "#98462e",
+                    "on-primary-container": "#ffe0d8",
+                    "secondary-fixed-dim": "#bfcd8f",
+                    "primary-fixed": "#ffdbd1",
+                    "on-surface-variant": "#55433e",
+                    "outline": "#88726d",
+                    "inverse-surface": "#343026",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#a34f36",
+                    "outline-variant": "#dbc1ba",
+                    "on-background": "#1e1b13",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#d8e6a6",
+                    "secondary-fixed": "#dbe9a9",
+                    "surface": "#fff8ef",
+                    "on-secondary-fixed": "#171e00",
+                    "on-secondary-container": "#5c6834",
+                    "tertiary-fixed-dim": "#7ed5cf",
+                    "on-surface": "#1e1b13",
+                    "surface-bright": "#fff8ef",
+                    "on-primary-fixed": "#3b0a00",
+                    "on-tertiary-fixed-variant": "#00504c",
+                    "surface-container-highest": "#e9e2d3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #fff8ef; color: #1e1b13; }
+        .font-serif { font-family: 'Noto Serif', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .hero-gradient { background: linear-gradient(135deg, rgba(132,56,33,0.9) 0%, rgba(163,79,54,0.4) 100%); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background">
+<!-- TopAppBar -->
+<header class="bg-[#fff8ef]/80 dark:bg-stone-950/80 backdrop-blur-md fixed top-0 w-full z-50 shadow-[0_32px_64px_rgba(132,56,33,0.05)]">
+<div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#843821] text-3xl">restaurant_menu</span>
+<h1 class="text-2xl font-serif text-[#843821] italic tracking-tight">La Sazón Nicolasa</h1>
+</div>
+<nav class="hidden md:flex gap-10">
+<a class="text-[#843821] border-b-2 border-[#843821] font-medium transition-opacity hover:opacity-80" href="#">Home</a>
+<a class="text-[#1e1b13] font-medium transition-opacity hover:opacity-80" href="#">The Legacy</a>
+<a class="text-[#1e1b13] font-medium transition-opacity hover:opacity-80" href="#">Menu</a>
+<a class="text-[#1e1b13] font-medium transition-opacity hover:opacity-80" href="#">Reservations</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-bold shadow-sm hover:opacity-90 transition-all uppercase tracking-widest text-xs">
+                Book Table
+            </button>
+</div>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[795px] flex items-center px-8 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="Close-up of a rustic wood-fired clay oven with glowing embers and a copper pot, warm golden lighting, traditional atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhsk7ZNTdFEtkeGtZa61HuXvXRxVgEC7QXi7VU8xqieii7X045cXO0VppJxhPMY8K01A5Y16z5NNCzIAyPmF28hVS-SL0qO2jrTb6zT4shV8FrktVnOxWZBfAoEeDjkUo7ekEbVieHrwPSgd0M3SWQv7GGayqE6BHRZrQ9LoV0mfM7aSvLk9mxInYKwTPONJMU9-7QN4IIkoytiuTcSKUeHf4wufEHbdQnVLEW3NXAD3h_ZsSP5EVNywV86aMeSF9nzY8zVN50pctI"/>
+<div class="absolute inset-0 bg-black/40 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-2xl">
+<span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Tradición Viva</span>
+<h2 class="text-6xl md:text-8xl font-serif text-on-background italic leading-tight mb-6">
+                    Donde el Fuego se Encuentra con la <span class="text-primary">Tradición</span>
+</h2>
+<p class="text-xl md:text-2xl font-body text-on-surface-variant mb-10 leading-relaxed max-w-lg">
+                    Una experiencia culinaria que honra las recetas de nuestras abuelas en un entorno diseñado para los sentidos.
+                </p>
+<div class="flex gap-6">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-lg text-lg font-bold hover:bg-primary-container transition-colors shadow-lg">
+                        Reservar Mesa
+                    </button>
+<button class="flex items-center gap-2 text-primary font-bold border-b-2 border-primary py-4 hover:gap-4 transition-all">
+                        Ver Menú <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- The Legacy (About Us) -->
+<section class="py-32 px-8 max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div class="relative">
+<div class="aspect-[4/5] bg-surface-container-highest rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700" data-alt="An elderly woman with kind eyes and apron kneading dough on a wooden table dusted with flour, warm soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDej3nAf8LQI3cjuTulmcxDLqFiaRdyVKYDesJaNaBHCNpkQ4L_w0daPFUO47Mx7Z7aZ2spSPyOmRY4Z-AhitYt5bZnOFlirMKJZ2Zhzl_KMyzEjV--930l9fDbYYmTqf74bZvfJFXAlvBCNpf8wpM1jkcesayOTpTUw9ciX1EQ-0kytNZPoS75PHlu-anqlNthzKswGKEQVApUy16S4yNBMPrcRBkFpRUPDroYQK9BIWfj4jywwsKCproNd1QmRpO4e2_C9mPUv1Tb"/>
+</div>
+<div class="absolute -bottom-10 -right-10 bg-primary-container p-8 text-on-primary-container max-w-xs rounded-lg shadow-2xl hidden md:block">
+<p class="font-serif italic text-lg leading-snug">
+                            "El secreto no está en los ingredientes, sino en el tiempo que les permites hablar."
+                        </p>
+<span class="block mt-4 font-bold tracking-widest uppercase text-xs">— Nicolasa</span>
+</div>
+</div>
+<div class="space-y-8">
+<h3 class="text-label-md uppercase tracking-[0.4em] text-on-surface-variant font-bold">The Legacy</h3>
+<h2 class="text-5xl font-serif text-on-background italic leading-tight">El Alma de Nuestra Cocina</h2>
+<div class="space-y-6 text-lg text-on-surface-variant leading-loose font-body">
+<p>
+                            Nicolasa no solo cocinaba; ella orquestaba memorias. En su cocina, el tiempo se detenía. El aroma del maíz recién molido y el crepitar de la leña eran el preludio de un festín que alimentaba tanto el cuerpo como el espíritu.
+                        </p>
+<p>
+                            Hoy, preservamos su legado utilizando las mismas ollas de barro y las técnicas ancestrales que ella perfeccionó durante décadas. Cada plato es un tributo a la paciencia y al respeto por la tierra.
+                        </p>
+</div>
+<div class="pt-6">
+<div class="inline-flex items-center gap-4 py-4 px-6 bg-surface-container-low rounded-full">
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Heritage</span>
+<span class="text-on-surface font-bold text-sm tracking-wide">Recetas de 1942</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Senses (Bento Grid) -->
+<section class="bg-surface-container-low py-32 px-8">
+<div class="max-w-screen-2xl mx-auto">
+<div class="text-center mb-20 space-y-4">
+<h2 class="text-5xl font-serif italic text-on-background">Despertar los Sentidos</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">Texturas, aromas y colores que cuentan la historia de nuestro campo y nuestra gente.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 md:grid-rows-2 gap-6 h-auto md:h-[800px]">
+<!-- Bento Card 1 -->
+<div class="md:col-span-8 md:row-span-1 rounded-lg overflow-hidden group relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Overhead view of fresh organic herbs, cherry tomatoes, and garlic on a rustic wooden board with a linen napkin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqX14dnXYFBDoZe0ZbMMKa-G_mI64epe_xYO9974xPKRZ7rCVBm848rgoOk80Tptrw3xZ--CG5rw24O-wYh9nMHR6Lh8-lqSrFZElFgvQ-3YBeTVZBR5ME7lh6qYBSw9jPFuAvFyH7RASdPi78cPqfV2nRPwxu6lzi6UbVNgnW_Hpd92UqN5Hbg0hYXYpXddTCqoeiBpksyCjwCChBABq1jDzi-8D2Jti4oWknHjcQKM6spi5Y3y7EopvjB7e39Jfx-FLRwpiZPiJs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+<span class="text-white font-serif italic text-2xl">La Cosecha del Día</span>
+</div>
+</div>
+<!-- Bento Card 2 -->
+<div class="md:col-span-4 md:row-span-2 rounded-lg overflow-hidden group relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Artisanal clay pottery plates stacked on a stone shelf with soft side lighting highlighting the textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeS9b3e2K7I3a0N3pX4Zi0OV_Bv1ted6GMzLeq5vxN0DvhxxzAoYLxI7GB2Fh7OvGdY_oVmJ3Ppy8S-QEFNiTAmkLKbE9V94kjjA3vXh1L9mrjQ2co2jCP9mtwgiLrHNGBja78q2JnMx1sqyrMDDPgMTOnkUM4mVCP1eXlTQVectEm4D0RqZwQhDT3zb4s6BTO23pCsPq38Vaw7kXuc_16y-Y1yM1E7cq361nSny1RxhOaqEEMbatYAFStdZLN4WC6SGH8TrZgqITX"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+<span class="text-white font-serif italic text-2xl">Alfarería de Barro</span>
+</div>
+</div>
+<!-- Bento Card 3 -->
+<div class="md:col-span-4 md:row-span-1 rounded-lg overflow-hidden group relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Steam rising from a freshly baked loaf of artisan bread in a traditional oven setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC07wv3IBi0KmIqx7SV2dzJ82KS-Vb0hMpvTvIoUgf-CFjsb59ssk_nlZ441veIXm44ZM3aFa6SFNRb5EBv7gO1MNJkhMV8FXPSfOjJX3H2eJIfeEu81OD0fxfcuzFhvC2oV1F7ScnEitUliDgPI3138qQMV4sVTQeHVDHkgsllpggPm1CtKDFjwVlss5UV2PjqcZzrbzn0AzGm0_9lqeoXV2oNQlg1pp0uF7FtpdecLaHY-BHKEWvxZmlxEEsL97BQk1jIM9VPZL1t"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+<span class="text-white font-serif italic text-2xl">Aroma de Hogar</span>
+</div>
+</div>
+<!-- Bento Card 4 -->
+<div class="md:col-span-4 md:row-span-1 rounded-lg overflow-hidden group relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A festive table spread with traditional dishes and wine glasses during sunset in a rustic terrace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRiPYcgbJIyAx8XucfzeWUU-TrroUyYFZ4DrC9sMRJl8UHieF4gjvMFkXvexnGAQfYfbGFtvDN5sUC9pAAbl7Ei4jKMYa5DibDivQEs7cEw7M9OCLvQpBIkH6HKAvvTOYOlPCZ8ywjtvOei02Y5kl-nkkfInk3PHug-Vn2JSP6y45cbHBTxbQKTeio5JJuthPRqBgEcOYUyr1-eejWGv0_ER-kLuNQZALoU7MFXsPUNtyxyNlnFZjFx14a5XP6PQe1SlyS15F4_YRj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+<span class="text-white font-serif italic text-2xl">Compartir</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature Experiences -->
+<section class="py-32 px-8 max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl">
+<h3 class="text-label-md uppercase tracking-[0.4em] text-on-surface-variant font-bold mb-4">Experiences</h3>
+<h2 class="text-5xl font-serif text-on-background italic">Experiencias Firmadas</h2>
+</div>
+<p class="text-on-surface-variant max-w-sm">Momentos diseñados para elevar la gastronomía tradicional a un arte efímero.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="group bg-surface-container-highest p-12 rounded-lg hover:bg-primary-container transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container text-4xl mb-6">award_star</span>
+<h4 class="text-3xl font-serif italic mb-4 group-hover:text-on-primary-container transition-colors">Menú de Degustación</h4>
+<p class="text-on-surface-variant group-hover:text-on-primary-container/80 mb-8 leading-relaxed">
+                        Un recorrido de siete tiempos por la historia culinaria de nuestra región. Desde los fundamentos del fuego hasta la delicadeza de los dulces ancestrales.
+                    </p>
+<a class="inline-flex items-center gap-2 text-primary group-hover:text-on-primary-container font-bold tracking-widest uppercase text-xs" href="#">
+                        Explorar Menú <span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+</div>
+<div class="group bg-surface-container-high p-12 rounded-lg hover:bg-secondary transition-colors duration-500">
+<span class="material-symbols-outlined text-secondary group-hover:text-on-secondary text-4xl mb-6">local_dining</span>
+<h4 class="text-3xl font-serif italic mb-4 group-hover:text-on-secondary transition-colors">Cenas Privadas</h4>
+<p class="text-on-surface-variant group-hover:text-on-secondary/80 mb-8 leading-relaxed">
+                        Nuestra cava o el patio de los olivos transformados en su comedor personal. Un chef dedicado y un servicio impecable para sus celebraciones más íntimas.
+                    </p>
+<a class="inline-flex items-center gap-2 text-secondary group-hover:text-on-secondary font-bold tracking-widest uppercase text-xs" href="#">
+                        Consultar Disponibilidad <span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-32 bg-surface text-center px-8">
+<div class="max-w-4xl mx-auto space-y-12">
+<span class="material-symbols-outlined text-primary-container text-6xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<div class="space-y-16">
+<blockquote class="text-3xl md:text-5xl font-serif italic text-on-background leading-tight">
+                        "Encontrar un lugar donde el sabor te transporte directamente a la infancia es raro. La Sazón Nicolasa no es un restaurante, es un viaje en el tiempo."
+                    </blockquote>
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="Portrait of a smiling middle-aged woman in elegant attire, soft background bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe_7LKBqLkDN2Rhb65kj7vdm37Xfe2SsefsOD7Kzy8xohWsj12dNvsdrdB85U7kffKgX1xIZ_7Z_3JgZz8iDKPJ3HTY4n2BY_NprGWpFe_QNOrmghmoKjUkjAHoLT8xixFTOXX5uvQVCkVH2dWDnJwC0NwD3rjZGrEbj5_BAjUCOr3robTN3AKZ1rABQw6kLryr9iokMeFp4Yjky-ttspLY_UnIH6NaPQ3oFxXcLCf7eG6np_zsBt1i_JiSeF9oGxm0MXUrN7-2Rn7"/>
+</div>
+<span class="font-bold tracking-widest uppercase text-xs">Elena Martínez</span>
+<span class="text-on-surface-variant text-sm italic">Crítica Gastronómica</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Location & Hours -->
+<section class="py-32 px-8 bg-surface-container-highest">
+<div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
+<div class="space-y-12">
+<h2 class="text-5xl font-serif italic text-on-background">Visítenos</h2>
+<div class="space-y-8">
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-primary p-3 bg-background rounded-lg">location_on</span>
+<div>
+<h5 class="font-bold text-on-background mb-1">Dirección</h5>
+<p class="text-on-surface-variant">Calle de la Piedra 124, Barrio Antiguo<br/>San Miguel de Allende, México</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-primary p-3 bg-background rounded-lg">schedule</span>
+<div>
+<h5 class="font-bold text-on-background mb-1">Horario de Servicio</h5>
+<div class="grid grid-cols-2 gap-x-8 gap-y-1 text-on-surface-variant">
+<span>Martes — Jueves</span> <span>13:00 – 22:00</span>
+<span>Viernes — Sábado</span> <span>13:00 – 23:30</span>
+<span>Domingo</span> <span>12:00 – 19:00</span>
+<span class="text-primary font-bold italic">Lunes</span> <span class="italic">Cerrado</span>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-primary p-3 bg-background rounded-lg">call</span>
+<div>
+<h5 class="font-bold text-on-background mb-1">Contacto</h5>
+<p class="text-on-surface-variant">+52 (415) 123 4567<br/>hola@lasazonnicolasa.com</p>
+</div>
+</div>
+</div>
+</div>
+<div class="rounded-lg overflow-hidden shadow-2xl h-[500px]">
+<img class="w-full h-full object-cover" data-alt="A stylized overhead map illustration of a historical town center with warm earthy tones and hand-drawn aesthetics" data-location="San Miguel de Allende" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrWSCQuCklrVEBwP9TPWI5ogcTNyjPz5pfRFS1N-jdYQP8W4yVk4pxKiIo7JgxsbHsQzCs-Twx3Ut-yRL4WnXIvKNVmpwnhXLe_vEN57PqB1L2_BYoQyJOCfo90hKahUobsUnjhzWVwNzqBDw5lbbBAIPzWZuWgcz_47LGYO9GWOmdL7SsCV1dP3JUQMU1aTQjjEJlsjdScJKKl-cMn4QIMCI32jHBemN5-B3dlAYFHGpfSywEhRJhXwiUhOyaj4vwxEIwHkanMUt3"/>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-40 px-8 relative overflow-hidden text-center bg-[#843821]">
+<div class="absolute inset-0 opacity-20">
+<img class="w-full h-full object-cover mix-blend-overlay" data-alt="Abstract textures of fire and smoke in deep warm orange and brown tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK-McxQsAzzHuz5VLolNRstHPM4tY09Ibixh2CzQITDyyTSOCYiIIB7bVveO14wlFLukZ0AqhufEZUQa9kz5vZeIHiVQtiishV4IUlWqYu8j4-Dlcvs0cSAxFRJ5Zxqe6ksjkP6pcu-mvQfCfGRv2hdciZKnZK-uCcSi_FsUevYfDRs55urXihsUDTaZ3EZOXT2pYL4PIV5L5sdrt2sGMgs9dmY3l8Ua8kVrPdhVqyExGYzDzSb67jpuAsTFLw_EIhIJhe3WDoI9ww"/>
+</div>
+<div class="relative z-10 max-w-3xl mx-auto">
+<h2 class="text-5xl md:text-7xl font-serif italic text-white mb-8">Vuelve a tus raíces. Te esperamos.</h2>
+<p class="text-on-primary-container text-xl mb-12 opacity-90">Permítanos preparar una mesa para usted y los suyos.</p>
+<button class="bg-surface-container-lowest text-primary px-12 py-6 rounded-lg text-xl font-bold hover:scale-105 transition-transform shadow-2xl uppercase tracking-[0.2em]">
+                    Book Now
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#fbf3e4] dark:bg-stone-900 w-full py-12 px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-screen-2xl mx-auto">
+<div class="text-center md:text-left">
+<h4 class="font-serif text-xl text-[#843821] mb-2 italic">La Sazón Nicolasa</h4>
+<p class="font-sans text-sm tracking-widest uppercase text-[#1e1b13]/60 dark:text-[#e9e2d3]/60">
+                    © 2024 La Sazón Nicolasa. Preserving Heritage Through Flavor.
+                </p>
+</div>
+<nav class="flex gap-8">
+<a class="font-sans text-sm tracking-widest uppercase text-[#1e1b13]/60 dark:text-[#e9e2d3]/60 hover:text-[#843821] transition-colors" href="#">The Legacy</a>
+<a class="font-sans text-sm tracking-widest uppercase text-[#1e1b13]/60 dark:text-[#e9e2d3]/60 hover:text-[#843821] transition-colors" href="#">Menu</a>
+<a class="font-sans text-sm tracking-widest uppercase text-[#1e1b13]/60 dark:text-[#e9e2d3]/60 hover:text-[#843821] transition-colors" href="#">Reservations</a>
+<a class="font-sans text-sm tracking-widest uppercase text-[#1e1b13]/60 dark:text-[#e9e2d3]/60 hover:text-[#843821] transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-[#843821] cursor-pointer">social_leaderboard</span>
+<span class="material-symbols-outlined text-[#843821] cursor-pointer">photo_camera</span>
+</div>
+</div>
+</footer>
+</body></html>
